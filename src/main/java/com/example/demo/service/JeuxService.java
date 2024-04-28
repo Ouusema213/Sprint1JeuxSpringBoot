@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 
+import com.example.demo.entities.Categorie;
 import com.example.demo.entities.Jeux;
 
 public interface JeuxService {
@@ -15,5 +16,15 @@ public interface JeuxService {
 	List<Jeux> getAllJeux();
 	
 	Page<Jeux> getAllJeuxParPage(int page, int size);
+	
+	
+	List<Jeux> findByNomJeux(String nom);
+	List<Jeux> findByNomJeuxContains(String nom);
+	List<Jeux> findByNomPrix (String nom, Double prix);
+	List<Jeux> findByCategorie (Categorie categorie);
+	List<Jeux> findByCategorieId(Long id);
+	List<Jeux> findByOrderByNomAsc();
+	List<Jeux> trierJeuxsNomsPrix();
+
 	
 }

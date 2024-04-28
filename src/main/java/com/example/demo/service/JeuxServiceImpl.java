@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entities.Categorie;
 import com.example.demo.entities.Jeux;
 import com.example.demo.repo.JeuxRepository;
 @Service
@@ -55,6 +56,48 @@ public class JeuxServiceImpl implements JeuxService {
 	public Page<Jeux> getAllJeuxParPage(int page, int size) {
 		// TODO Auto-generated method stub
 		return jeuxRepository.findAll(PageRequest.of(page, size));
+	}
+
+	@Override
+	public List<Jeux> findByNomJeux(String nom) {
+		// TODO Auto-generated method stub
+		return jeuxRepository.findByNom(nom);
+	}
+
+	@Override
+	public List<Jeux> findByNomJeuxContains(String nom) {
+		// TODO Auto-generated method stub
+		return jeuxRepository.findByNomContains(nom);
+	}
+
+	@Override
+	public List<Jeux> findByNomPrix(String nom, Double prix) {
+		// TODO Auto-generated method stub
+		return jeuxRepository.findByNomPrix(nom, prix);
+	}
+
+	@Override
+	public List<Jeux> findByCategorie(Categorie categorie) {
+		// TODO Auto-generated method stub
+		return jeuxRepository.findByCategorie(categorie);
+	}
+
+	@Override
+	public List<Jeux> findByCategorieId(Long id) {
+		// TODO Auto-generated method stub
+		return jeuxRepository.findByCategorieId(id);
+	}
+
+	@Override
+	public List<Jeux> findByOrderByNomAsc() {
+		// TODO Auto-generated method stub
+		return jeuxRepository.findByOrderByNomAsc();
+	}
+
+	@Override
+	public List<Jeux> trierJeuxsNomsPrix() {
+		// TODO Auto-generated method stub
+		return jeuxRepository.trierJeuxNomsPrix();
 	}
 
 }
