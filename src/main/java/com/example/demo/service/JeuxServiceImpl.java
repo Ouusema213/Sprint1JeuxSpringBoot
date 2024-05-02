@@ -9,10 +9,13 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Categorie;
 import com.example.demo.entities.Jeux;
+import com.example.demo.repo.CategorieRepository;
 import com.example.demo.repo.JeuxRepository;
 @Service
 public class JeuxServiceImpl implements JeuxService {
-	
+	@Autowired
+	CategorieRepository categorieRepository;
+
 	@Autowired
 	private JeuxRepository jeuxRepository ;
 
@@ -98,6 +101,13 @@ public class JeuxServiceImpl implements JeuxService {
 	public List<Jeux> trierJeuxsNomsPrix() {
 		// TODO Auto-generated method stub
 		return jeuxRepository.trierJeuxNomsPrix();
+	}
+
+	@Override
+	public List<Categorie> getAllCategories() {
+		// TODO Auto-generated method stub
+		return  categorieRepository.findAll();
+
 	}
 
 }

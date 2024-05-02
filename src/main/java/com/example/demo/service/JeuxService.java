@@ -25,6 +25,10 @@ public interface JeuxService {
 	List<Jeux> findByCategorieId(Long id);
 	List<Jeux> findByOrderByNomAsc();
 	List<Jeux> trierJeuxsNomsPrix();
+	
+	
+	List<Categorie> getAllCategories();
+
 
 	
 }
