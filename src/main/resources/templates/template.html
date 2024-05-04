@@ -39,7 +39,7 @@
 				</a>
 				<div class="dropdown-menu">
 					<a 	sec:authorize="!isAuthenticated()" class="dropdown-item" href="#">login</a>
-					<a 	sec:authorize="isAuthenticated()" class="dropdown-item" href="#">logout</a>
+					<a 	sec:authorize="isAuthenticated()" class="dropdown-item" th:href="@{logout}">logout</a>
 					<a class="dropdown-item" href="#">Profile</a>
 				</div>
 			</li>

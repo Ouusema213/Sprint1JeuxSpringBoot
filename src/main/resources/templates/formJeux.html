@@ -60,7 +60,8 @@
 						</div>
 
 						<div>
-							<button type="submit" class="btn btn-primary">Ajouter</button>
+							<button th:if="${mode=='new'}" type="submit" class="btn btn-primary">Ajouter</button>
+							<button th:if="${mode=='edit'}" type="submit" class="btn btn-primary">Modifier</button>
 						</div>
 				</form>
 			</div>
